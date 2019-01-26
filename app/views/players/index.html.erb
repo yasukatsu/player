@@ -1,0 +1,41 @@
+<div class="game-index-wrapper">
+  <div class="container">
+    <h1 class="team_name">
+      <% if @team.team_name.present? %>
+       <%= @team.team_name %>
+       <% end %>
+    </h1>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class = "player-index">
+          <h2>選手一覧</h2>
+          <div class="index-gk">
+          <h5>＜GK＞</h5>
+          <div class="gk-players">
+          <% @player_GK.each do |player_GK| %>
+          <% if player_GK.present? %>
+          <%= link_to player_path do %>
+          <li><%= player_GK.name %><br></li>
+          <% end %>
+          <% end %>
+          <% end %>
+          </div>
+          </div>
+          <div class="index-cp">
+          <h5>＜CP＞</h5>
+          <div class="cp-players">
+          <% @player_CP.each do |player_CP| %>
+          <% if player_CP.present? %>
+          <%= link_to url: player_path do %>
+          <li><%= player_CP.name %><br></li>
+          <% end %>
+          <% end %>
+          <% end %>
+          </div>
+          </div>
+
+         </div>
+        </div>
+      </div>
+  　</div>
+</div>

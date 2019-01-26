@@ -1,0 +1,64 @@
+<div class="player-new-wrapper" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">選手登録</h1>
+        <%= form_for @player do |f| %>
+
+          <div id="image_form" class="form-group">
+            <%= f.label :写真 %>
+            <%= f.file_field :image%>
+          </div>
+
+          <div id="name_form" class="form-group">
+            <%= f.label :"名前", class: "text-black" %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+
+          <div id="name_kana_form" class="form-group">
+            <%= f.label :"名前（カタカナ）", class: "text-black" %>
+            <%= f.text_field :name_kana, class: 'form-control' %>
+          </div>
+
+          <div id="birthday_form" class="form-group">
+            <%= f.label :"生年月日", class: "text-black" %>
+            <%= f.text_field :birthday, class: 'form-control' %>
+          </div>
+
+          <div id="height_form" class="form-group">
+            <%= f.label :"身長", class: "text-black" %>
+            <%= f.text_field :height, class: 'form-control' %>
+          </div>
+
+          <div id="weight_form" class="form-group">
+            <%= f.label :"体重", class: "text-black" %>
+            <%= f.text_field :weight, class: 'form-control' %>
+          </div>
+
+          <div id="dominant_arm_form" class="form-group">
+            <%= f.label :"利き腕 （選択してください）　　", class: "text-black" %><br>
+            <%= f.select :dominant_arm, [["右利き", "right"], ["左利き", "left"],["両利き", "double"]], class: 'form-control' %>
+          </div>
+
+          <div id="position_form" class="form-group">
+            <%= f.label :"ポジション （選択してください）　　", class: "text-black" %><br>
+            <%= f.select :position, [["CP", "CP"], ["GK", "GK"]], class: 'form-control' %>
+          </div>
+
+          <div id="st_position_form" class="form-group">
+            <%= f.label :"得意なポジション （選択してください）　　", class: "text-black" %><br>
+            <%= f.select :st_position, [["GK", "GK"], ["LW", "LW"],["LB", "LB"],["CB", "CB"],["RB", "RB"],["RW", "RW"],["PV", "PV"]], class: 'form-control' %>
+          </div>
+
+          <div id="graduate_form" class="form-group">
+            <%= f.label :"出身高校", class: "text-black" %>
+            <%= f.text_field :graduate, class: 'form-control' %>
+          </div>
+
+          <%= f.submit '登録', class: 'btn btn-black btn-block' %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

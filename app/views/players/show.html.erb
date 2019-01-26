@@ -1,0 +1,48 @@
+<div class="player-index-wrapper">
+  <div class="container">
+    <% @players.each do |player| %>
+
+      <div class="image-zone">
+        <%= player.image %>
+      </div>
+
+      <div class="name-zone">
+        <h4 class="name_kana"><%= player.name_kana %></h4>
+        <h2 class="name"><%= player.name%></h2>
+      </div>
+
+      <div class="birthday-zone">
+        <%= player.birthday %>
+      </div>
+
+      <div class="height-zone">
+        <%= player.height %>
+      </div>
+
+      <div class="weight-zone">
+        <%= player.weight %>
+      </div>
+
+      <div class="dominant_arm-zone">
+        <%= player.dominant_arm %>
+      </div>
+
+      <div class="position-zone">
+        <%= player.position %>
+      </div>
+
+      <div class="st_position-zone">
+        <%= player.st_position %>
+      </div>
+
+      <div class="graduate-zone">
+        <%= player.graduate %>
+      </div>
+
+      <div class="regist_time-zone">
+        <%= player.created_at %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

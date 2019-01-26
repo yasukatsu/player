@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Player Index</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% flash.each do |key, value| %>
+     <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+     <% end %>
+
+         <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+           <div class="container">
+
+               <h1 class = "navbar-brand">Player Index</h1>
+             <ul class="nav navbar-nav navbar-right">
+               <% if logged_in? %>
+               <li>
+                 <%= link_to players_path do %>
+                   <h4>ホーム</h4>
+                   <% end %>
+               </li>
+                 <li>
+                   <%= link_to new_player_path do %>
+                     <h4>選手登録</h4>
+                     <% end %>
+                 </li>
+
+                 <li>
+                   <%= link_to logout_path, method: :delete do %>
+                     <h4>ログアウト</h4>
+                   <% end %>
+                 </li>
+               <% else %>
+
+               <% end %>
+             </ul>
+             </div>
+         </nav>
+
+    <%= yield %>
+
+    <script>
+
+      $(function () {
+        $(".alert").fadeOut(5000);
+      });
+
+    </script>
+  </body>
+</html>
